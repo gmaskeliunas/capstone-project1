@@ -24,9 +24,9 @@ export default function Footer() {
         <p>Email: info@example.com</p>
       </div>
       <div className="social-links">
-        <a href="https://www.facebook.com"><i className="fab fa-facebook">facebook</i></a>
-        <a href="https://www.twitter.com"><i className="fab fa-twitter">twitter</i></a>
-        <a href="https://www.instagram.com"><i className="fab fa-instagram">instagram</i></a>
+        <a href="https://www.facebook.com"><i className="fab fa-facebook">Facebook</i></a>
+        <a href="https://www.twitter.com"><i className="fab fa-twitter">Twitter</i></a>
+        <a href="https://www.instagram.com"><i className="fab fa-instagram">Instagram</i></a>
       </div>
     </footer>
   );
