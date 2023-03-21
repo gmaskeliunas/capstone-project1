@@ -1,0 +1,94 @@
+.app__dish-card {
+  border-radius: 1.6vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #EDEFEE;
+  margin: 0px;
+  min-height: 65vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.app__dish-card button {
+  font-family: var(--font-base);
+  margin-top: auto;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  padding: 0px 20px;
+  align-self: center;
+  justify-self: end;
+  cursor: pointer;
+  grid-area: button;
+  padding: 10px 20px;
+  background-color: #F4CE14;
+  color: var(--color-black);
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.1s ease-in;
+}
+
+.app__dish-card button:hover {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.app__dish-card button:active {
+  background-color: var(--color-white);
+}
+
+.app__dish-card img {
+  /* display: block; */
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  border-top-left-radius: 1.6vh;
+  border-top-right-radius: 1.6vh;
+}
+
+.app__dish-card_name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-base);
+}
+
+.app__dish-card_name {
+  margin: 20px;
+  color: var(--color-black);
+  font-size: 1.5rem;
+}
+
+.app__dish-card_description {
+  margin: 12px 20px 20px 20px;
+  color: var(--color-black);
+  font-size: 1.2rem;
+  font-family: var(--font-base);
+}
+
+.app__dish-card_price {
+  margin-right: 12px;
+  color: #EE9972;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 650px) {
+  .app__dish-card_name {
+    font-size: 1.2rem;
+  }
+
+  .app__dish-card_description {
+    font-size: 1rem;
+  }
+
+  .app__dish-card button {
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+}

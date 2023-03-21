@@ -1,0 +1,188 @@
+.app__footer-container {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  padding: 1.6rem 1rem;
+  display: flex;
+}
+
+.app__footer-logo {
+  /* justify-items: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+.app__footer-logo img{
+  
+  box-shadow: 0 0 10px 10px var(--color-white);
+  /* background: linear-gradient(0deg,#edefee 0%, #495e57 100%); */
+  background: var(--color-white);
+  padding: 12px;
+}
+
+.app__footer_doormat-nav {
+  width: 70%;
+}
+
+.app__footer_doormat-nav ul {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-family: var(--font-base);
+}
+
+/* .app__footer_doormat-nav ul li {
+  margin-right: 16px;
+} */
+
+.app__footer_doormat-nav ul li:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.app__footer_doormat-nav ul li a {
+  color: var(--color-white);
+}
+
+.app__footer_doormat-nav ul li a:hover {
+  color: var(--color-orange);
+}
+
+.app__footer_contact-info {
+  font-size: 1.5rem;
+  font-family: var(--font-base);
+  width: 70%;
+}
+
+.app__footer_contact-info p {
+  margin-bottom: 0.5rem;
+}
+.app__footer_contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.app__footer_social-links {
+  display: flex;
+  /* flex-direction: column; */
+  width: 70%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.app__footer_social-links a {
+  margin: 12px;
+  color: var(--color-white);
+  font-size: 3rem;
+  display: flex;
+  justify-self: center;
+}
+
+.app__footer_social-links a:hover {
+  color: var(--color-orange);
+}
+
+
+@media screen and (max-width: 2000px) {
+
+}
+
+@media screen and (max-width: 1150px) {
+  .app__footer_doormat-nav {
+    width: 50%;
+  }
+
+  .app__footer_contact-info {
+    width: 50%;
+  }
+
+  .app__footer_social-links {
+    width: 50%;
+  }
+
+  .app__footer_doormat-nav ul {
+    font-size: 1.2rem;
+  }
+
+  .app__footer_contact-info p {
+    font-size: 1.2rem;
+  }
+
+  .app__footer_social-links a{
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .app__footer-container {
+    display: flex;
+    justify-content: center;
+  }
+  .app__footer_doormat-nav {
+    width: 25%;
+    padding: 20px;
+  }
+
+  .app__footer_contact-info {
+    width: 25%;
+    padding: 20px;
+  }
+
+  .app__footer_social-links a{
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__footer_doormat-nav ul li {
+  padding: 0;
+  }
+
+  .app__footer-logo {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .app__footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .app__footer_doormat-nav {
+    margin-left: 20px;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .app__footer_contact-info {
+    margin-left: 20px;
+    padding-left: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .app__footer_contact-info p {
+    font-size: 0.8rem;
+    margin-right: 10px;
+  }
+
+  .app__footer_social-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .app__footer_social-links a{
+    font-size: 1.5rem;
+  }
+}
