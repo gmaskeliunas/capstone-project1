@@ -2,12 +2,31 @@ import logo from '../images/Logo.svg';
 import { Link } from 'react-router-dom';
 import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 import "./Footer.css"
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+
+  const navigate = useNavigate();
+
+  const handleClick = (event, elementId) => {
+    event.preventDefault();
+    navigate("/")
+    setTimeout(() => {
+      scrollPage(elementId)
+    }, "10");
+  };
+
+  function scrollPage(elementId) {
+    const element = document.getElementById(elementId);
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <footer className="app__footer-container">
       <div className="app__footer-logo">
-        <img src={logo} alt="My Logo" />
+        <Link to="/" onClick={(event) => handleClick(event, "home")}>
+          <img src={logo} alt="My Logo" />
+        </Link>
       </div>
       <nav className="app__footer_doormat-nav">
         <ul>

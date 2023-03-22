@@ -1,5 +1,6 @@
 import "./DishCard.css"
 import { RiEBike2Fill } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 export default function DishCard(props) {
   return (
@@ -10,7 +11,7 @@ export default function DishCard(props) {
         <p className="app__dish-card_price">{props.price}</p>
       </div>
       <p className="app__dish-card_description">{props.description}</p>
-      <button>Order a delivery <RiEBike2Fill /></button>
+      <button role="button"><Link to="/order-online">Order a delivery <RiEBike2Fill /></Link></button>
     </div>
   );
 }

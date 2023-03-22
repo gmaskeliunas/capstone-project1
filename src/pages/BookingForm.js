@@ -127,7 +127,7 @@ const today = new Date().toISOString().split("T")[0];
           <option>Anniversary</option>
           <option>Other</option>
         </select>
-        <input className="app__reservationInputButton" type="submit" value="Book Now"/>
+        <input className="app__reservationInputButton" role="button" type="submit" value="Book Now"/>
       </form>
     </div>
   );
