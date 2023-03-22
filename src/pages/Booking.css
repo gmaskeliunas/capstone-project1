@@ -1,9 +1,19 @@
+.app__booking-page_header {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.app__booking-page_header h1 {
+  font-family: var(--font-alt);
+  font-size: 3rem;
+}
+
 .app__reservations-container {
   padding: 8vh 0;
 }
 
-form{
-  background-color: black;
+form {
   padding: 30px 70px;
   border-radius: 16px;
 }
@@ -13,11 +23,12 @@ form{
   grid-template-columns: 1fr;
   width: 30%;
   margin: 0 auto;
-  gap: 20px;
+  gap: 5px;
   align-items: center;
   justify-content: center;
   background-color: var(--color-creme);
   place-items: start;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .app__reservation-label{
@@ -30,12 +41,17 @@ form{
   font-family: var(--font-base);
   font-size: 1.5rem;
 }
-
-.reservationInput{
+.app__reservation_non-valid {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  color: red;
+}
+.app__reservationInputButton{
   font-family: var(--font-base);
   cursor: pointer;
   font-size: 1.5em;
   padding: 15px 40px;
+  margin-top: 30px;
   background-color: #F4CE14;
   border-radius: 16px;
   border: none;
@@ -44,10 +60,98 @@ form{
   justify-self: center;
 }
 
-.reservationInput:hover{
+.app__reservationInputButton:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
-.reservationInput:active {
+.app__reservationInputButton:active {
   background-color: var(--color-white);
+}
+
+.app__confirmation-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8vh 0;
+}
+
+.app__confirmation-wrapper h1 {
+  font-family: var(--font-alt);
+  font-size: 3rem;
+  margin-bottom: 3vh ;
+}
+
+.app__confirmation-wrapper img {
+  height: 200px;
+  width: auto;
+}
+
+@media screen and (max-width: 1366px) {
+  .app__reservations-form {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .app__reservations-form {
+    width: 45%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .app__reservations-form {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__reservations-form {
+    width: 70%;
+    gap: 5px;
+    margin: 0 auto;
+  }
+
+  .app__reservation-label {
+    font-size: 1rem;
+  }
+
+  .app__reservation-input {
+    font-size: 1rem;
+  }
+
+  .app__reservationInputButton {
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 10px 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .app__reservations-form {
+    width: 80%;
+    gap: 5px;
+    margin: 0 auto;
+  }
+
+  .app__reservation-label {
+    font-size: 1rem;
+  }
+
+  .app__reservation-input {
+    font-size: 1rem;
+  }
+
+  .app__reservationInputButton {
+    font-size: 0.8rem;
+    border-radius: 8px;
+    padding: 10px 30px;
+  }
+
+  .app__reservations-container {
+    padding: 4vh 0;
+  }
 }

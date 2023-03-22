@@ -4,7 +4,7 @@ import "./About.css"
 
 export default function About() {
   return (
-    <div className="app__aboutsection app__wrapper section__padding">
+    <div className="app__aboutsection app__wrapper section__padding" id="about">
       <div className="app__aboutsection_grid-container">
         <div className="app__aboutsection_left-column">
           <h1>Little Lemon</h1>

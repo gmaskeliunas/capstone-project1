@@ -2,6 +2,7 @@ import DishCard from '../DishCard/DishCard';
 import greekSaladPic from "../images/greekSalad.jpg"
 import bruschetta from "../images/bruschetta.svg"
 import lemmonDessert from "../images/lemon dessert.jpg"
+import { Link } from 'react-router-dom';
 import "./Highlights.css"
 
 export default function Highlights() {
@@ -9,7 +10,7 @@ export default function Highlights() {
     <div className="highlights-wrapper">
       <div className="highlights-flexbox">
         <h2>Specials</h2>
-        <button>Online Menu</button>
+        <button><Link to="/menu">Online Menu</Link></button>
       </div>
       <div className="grid-container-2">
         <DishCard

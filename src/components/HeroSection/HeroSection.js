@@ -1,4 +1,5 @@
 import restaurantfood from '../images/restaurantfood.jpg';
+import { Link } from 'react-router-dom';
 import "./HeroSection.css"
 
 export default function HeroSection() {
@@ -10,7 +11,7 @@ export default function HeroSection() {
           <h2>Chicago</h2>
           <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
           <div className="app__herosection_button">
-            <button>Reserve a table</button>
+            <button><Link to="/reservations">Reserve a table</Link></button>
           </div>
         </div>
         <img src={restaurantfood} alt="Food"/>

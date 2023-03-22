@@ -2,14 +2,39 @@ import logo from '../images/Logo.svg';
 import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Nav.css"
 
 export default function Nav() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  function setScrolled() {
+    window.scrollY > 0 ? setIsScrolled(true) : setIsScrolled(false);
+  }
+
+  window.addEventListener("scroll", setScrolled)
+
+  const navigate = useNavigate();
+
+  const handleClick = (event, elementId) => {
+    event.preventDefault();
+    navigate("/")
+    setTimeout(() => {
+      scrollPage(elementId)
+    }, "10");
+  };
+
+  function scrollPage(elementId) {
+    const element = document.getElementById(elementId);
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+
   return(
-    <nav className="app__navbar">
+    <nav className={isScrolled ? "app__navbar-sticky" : "app__navbar"}>
+    {/* // <nav className="app__navbar-sticky"> */}
       <div className="app__navbar-logo">
         <Link to="/">
           <img src={logo} alt="Little Lemon Logo"/>
@@ -17,10 +42,10 @@ export default function Nav() {
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans">
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={(event) => handleClick(event, "home")}>Home</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/about">About</Link>
+          <Link to="/" onClick={(event) => handleClick(event, "about")}>About</Link>
         </li>
         <li className="p__opensans">
           <Link to="/reservations">Reservations</Link>

@@ -1,76 +1,133 @@
 import { useState } from "react";
 import "./Booking.css"
 
-export default function BookingForm() {
+export default function BookingForm(props) {
 
-  const [date, setDate] = useState("");
-  const [availableTimes, setAvailableTimes] = useState(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
-  const [guestNumber, setGuestNumber] = useState("");
-  const [occasion, setOccasion] = useState("");
+  const [formError, setFormError] = useState({})
 
-  const clearForm = () => {
-    setDate("");
-    // setAvailableTimes("");
-    setGuestNumber("");
-    setOccasion("")
-  };
+  const validateForm = () => {
+    let err = {}
+    if (props.formData.firstName === "") {
+      err.firstName = "* First name required!"
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Reservation made!");
-    // clearForm();
-  };
+    if (props.formData.lastName === "") {
+      err.lastName = "* Last name required!"
+    }
+
+    if (props.formData.email === "") {
+      err.email = "* Email required!"
+    } else {
+    let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    if(!regex.test(props.formData.email)) {
+      err.email = "* Email not valid!"
+      }
+    }
+
+    if (props.formData.time === "") {
+        err.guests = "* Please specify desired time!"
+    }
+
+    if (props.formData.guests === "") {
+        err.guests = "* Please specify number of guests!"
+    }
+
+    if (props.formData.date === "") {
+        err.date = "* Please specify the date!"
+    }
+
+    setFormError({...err})
+    return Object.keys(err).length < 1;
+}
+
+const onSubmitHandler = (event) => {
+    event.preventDefault();
+    console.table(props.formData)
+    console.log("Submitted")
+    let isValid = validateForm()
+    if(isValid) {
+      props.submitForm()
+      // alert("Submitted")
+    }
+}
+
+const today = new Date().toISOString().split("T")[0];
 
   return(
     <div className="app__reservations-container">
-      <form className="app__reservations-form" onSubmit={handleSubmit}>
-        <label className="app__reservation-label" htmlFor="res-date">Choose date</label>
+      <form className="app__reservations-form" onSubmit={onSubmitHandler}>
+        <label className="app__reservation-label" htmlFor="res-fname">First name *</label>
+        <input
+          className="app__reservation-input"
+          placeholder="First name"
+          id="res-fname"
+          name="firstName"
+          onChange={props.onChangeHandler}
+        />
+        <span className="app__reservation_non-valid">{formError.firstName}</span>
+        <label className="app__reservation-label" htmlFor="res-lname">Last name *</label>
+        <input
+          className="app__reservation-input"
+          placeholder="Last name"
+          id="res-lname"
+          name="lastName"
+          onChange={props.onChangeHandler}
+        />
+        <span className="app__reservation_non-valid">{formError.lastName}</span>
+        <label className="app__reservation-label" htmlFor="res-email">E-mail *</label>
+        <input
+          className="app__reservation-input"
+          placeholder="example@mail.com"
+          id="res-email"
+          name="email"
+          onChange={props.onChangeHandler}
+        />
+        <span className="app__reservation_non-valid">{formError.email}</span>
+        <label className="app__reservation-label" htmlFor="res-date">Choose date *</label>
         <input
           className="app__reservation-input"
           type="date"
           id="res-date"
-          value={date}
-          onChange={e => setDate(e.target.value)}
+          name="date"
+          min={today}
+          onChange={props.onChangeHandler}
         />
-        <label className="app__reservation-label" htmlFor="res-time">Choose time</label>
+        <span className="app__reservation_non-valid">{formError.date}</span>
+        <label className="app__reservation-label" htmlFor="res-time">Choose time *</label>
         <select
           className="app__reservation-input"
           id="res-time"
-          value={availableTimes}
-          onChange={e => setAvailableTimes(e.target.value)}
+          name="time"
+          onChange={props.onChangeHandler}
         >
-          {availableTimes.map(time => (
+          {props.availableTimes.map(time => (
           <option key={time}>{time}</option>
         ))}
-            {/* <option>17:00</option>
-            <option>18:00</option>
-            <option>19:00</option>
-            <option>20:00</option>
-            <option>21:00</option>
-            <option>22:00</option> */}
         </select>
-        <label className="app__reservation-label" htmlFor="guests">Number of guests</label>
+        <span className="app__reservation_non-valid">{formError.time}</span>
+        <label className="app__reservation-label" htmlFor="guests">Number of guests *</label>
         <input
           className="app__reservation-input"
           type="number"
-          placeholder="1"
+          placeholder=""
           min="1" max="10"
           id="guests"
-          value={guestNumber}
-          onChange={e => setGuestNumber(e.target.value)}
+          name="guests"
+          onChange={props.onChangeHandler}
         />
         <label className="app__reservation-label" htmlFor="occasion">Occasion</label>
         <select
           className="app__reservation-input"
           id="occasion"
-          value={occasion}
-          onChange={e => setOccasion(e.target.value)}
+          name="occasion"
+          onChange={props.onChangeHandler}
         >
-            <option>Birthday</option>
-            <option>Anniversary</option>
-            <option>Other</option>
+          <option>Select</option>
+          <option>Birthday</option>
+          <option>Anniversary</option>
+          <option>Other</option>
         </select>
-        <input className="reservationInput" type="submit" value="Make Your reservation"/>
+        <input className="app__reservationInputButton" type="submit" value="Book Now"/>
       </form>
     </div>
   );
