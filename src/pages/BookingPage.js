@@ -37,6 +37,7 @@ export default function BookingPage() {
         <h1>Table reservation</h1>
       </div>
       <BookingForm formData={formData} onChangeHandler={onChangeHandler} availableTimes={availableTimes} submitForm={submitForm}/>
+      {/* <BookingForm formData={formData} onChangeHandler={onChangeHandler} availableTimes={availableTimes}/> */}
     </>
   );
 }

@@ -47,7 +47,7 @@ const onSubmitHandler = (event) => {
     let isValid = validateForm()
     if(isValid) {
       props.submitForm()
-      // alert("Submitted")
+      alert("Submitted")
     }
 }
 
@@ -74,7 +74,7 @@ const today = new Date().toISOString().split("T")[0];
           onChange={props.onChangeHandler}
         />
         <span className="app__reservation_non-valid">{formError.lastName}</span>
-        <label className="app__reservation-label" htmlFor="res-email">E-mail *</label>
+        <label className="app__reservation-label" htmlFor="res-email">Email *</label>
         <input
           className="app__reservation-input"
           placeholder="example@mail.com"
