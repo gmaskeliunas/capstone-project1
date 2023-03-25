@@ -10,7 +10,7 @@ export default function Footer() {
 
   const handleClick = (event, elementId) => {
     event.preventDefault();
-    navigate("/")
+    navigate("/capstone-project1/")
     setTimeout(() => {
       scrollPage(elementId)
     }, "10");
@@ -30,12 +30,12 @@ export default function Footer() {
       </div>
       <nav className="app__footer_doormat-nav">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/menu">Menu</Link></li>
-          <li><Link to="/reservations">Reservations</Link></li>
-          <li><Link to="/order-online">Order Online</Link></li>
-          <li><Link to="/login">Login</Link></li>
+          <li><Link to="/capstone-project1/">Home</Link></li>
+          <li><Link to="/capstone-project1/about">About</Link></li>
+          <li><Link to="/capstone-project1/menu">Menu</Link></li>
+          <li><Link to="/capstone-project1/reservations">Reservations</Link></li>
+          <li><Link to="/capstone-project1/order-online">Order Online</Link></li>
+          <li><Link to="/capstone-project1/login">Login</Link></li>
         </ul>
       </nav>
       <div className="app__footer_contact-info">

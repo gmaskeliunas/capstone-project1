@@ -11,7 +11,7 @@ export default function DishCard(props) {
         <p className="app__dish-card_price">{props.price}</p>
       </div>
       <p className="app__dish-card_description">{props.description}</p>
-      <button role="button"><Link to="/order-online">Order a delivery <RiEBike2Fill /></Link></button>
+      <button role="button"><Link to="/capstone-project1/order-online">Order a delivery <RiEBike2Fill /></Link></button>
     </div>
   );
 }

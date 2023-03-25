@@ -21,7 +21,7 @@ export default function Nav() {
 
   const handleClick = (event, elementId) => {
     event.preventDefault();
-    navigate("/")
+    navigate("/capstone-project1/")
     setTimeout(() => {
       scrollPage(elementId)
     }, "10");
@@ -42,19 +42,19 @@ export default function Nav() {
       </div>
       <ul className="app__navbar-links">
         <li className="p__opensans">
-          <Link to="/" onClick={(event) => handleClick(event, "home")}>Home</Link>
+          <Link to="/capstone-project1/" onClick={(event) => handleClick(event, "home")}>Home</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/" onClick={(event) => handleClick(event, "about")}>About</Link>
+          <Link to="/capstone-project1/" onClick={(event) => handleClick(event, "about")}>About</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/reservations">Reservations</Link>
+          <Link to="/capstone-project1/reservations">Reservations</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/order-online">Order Online</Link>
+          <Link to="/capstone-project1/order-online">Order Online</Link>
         </li>
         <li className="p__opensans">
-          <Link to="/login">Login</Link>
+          <Link to="/capstone-project1/login">Login</Link>
         </li>
       </ul>
       <div className="app__navbar-smallscreen">
@@ -65,19 +65,19 @@ export default function Nav() {
           <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
           <ul className="app__navbar-smallscreen_links">
             <li className="p__opensans">
-              <Link to="/" onClick={() => setToggleMenu(false)}>Home</Link>
+              <Link to="/capstone-project1/" onClick={() => setToggleMenu(false)}>Home</Link>
             </li>
             <li className="p__opensans">
-              <Link to="/about" onClick={() => setToggleMenu(false)}>About</Link>
+              <Link to="/capstone-project1/about" onClick={() => setToggleMenu(false)}>About</Link>
             </li>
             <li className="p__opensans">
-              <Link to="/reservations" onClick={() => setToggleMenu(false)}>Reservations</Link>
+              <Link to="/capstone-project1/reservations" onClick={() => setToggleMenu(false)}>Reservations</Link>
             </li>
             <li className="p__opensans">
-              <Link to="/order-online" onClick={() => setToggleMenu(false)}>Order Online</Link>
+              <Link to="/capstone-project1/order-online" onClick={() => setToggleMenu(false)}>Order Online</Link>
             </li>
             <li className="p__opensans">
-              <Link to="/login" onClick={() => setToggleMenu(false)}>Login</Link>
+              <Link to="/capstone-project1/login" onClick={() => setToggleMenu(false)}>Login</Link>
             </li>
           </ul>
         </div>
